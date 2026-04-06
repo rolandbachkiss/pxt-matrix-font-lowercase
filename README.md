@@ -1,30 +1,39 @@
 # pxt-matrix-font-lowercase
 
-A MakeCode micro:bit extension providing lowercase letters a–z as a 5×7 bitmap font for use with [pxt-matrix-text](https://github.com/rolandbachkiss/pxt-matrix-text).
+Lowercase letters a–z as a 5×7 bitmap font for [pxt-matrix-text](https://github.com/rolandbachkiss/pxt-matrix-text).
 
 ## Usage
 
-Simply add this extension to your project. On load, it automatically registers the font with `matrixText`, making all 26 lowercase letters available in `matrixText.drawText()` — no manual setup required.
-
-You can also retrieve the font object directly:
+Simply add this extension to your project. On load, it automatically registers the font with `matrixText` — no manual setup required.
 
 ```typescript
-const lower = matrixFontLowercase.font()
-// lower.glyphW === 5, lower.glyphH === 7
+matrixText.drawText("hello", 2, 2, matrixCore.rgb(0, 200, 255))
 ```
 
-## Supported characters
+## Supported Characters
 
 `a b c d e f g h i j k l m n o p q r s t u v w x y z`
 
-## Font format
+## Font Details
 
-- Glyph size: 5×7 pixels
-- Layout: column-major, 1 byte per column, bit 0 = top row
-- Data stored in flash (zero RAM cost)
+| Property | Value |
+|----------|-------|
+| Glyph size | 5×7 pixels |
+| Layout | Column-major, 1 byte per column, bit 0 = top row |
+| Data | Stored in flash (zero RAM cost) |
+| Characters | 26 glyphs |
+
+## API
+
+| Block | Description |
+|-------|-------------|
+| `lowercase font (5×7)` | Returns the MatrixFont object |
 
 ## Dependencies
 
-- [pxt-matrix-core](https://github.com/rolandbachkiss/pxt-matrix-core)
 - [pxt-matrix-text](https://github.com/rolandbachkiss/pxt-matrix-text)
-- [pxt-neopixel](https://github.com/microsoft/pxt-neopixel) v0.7.6
+- [pxt-matrix-core](https://github.com/rolandbachkiss/pxt-matrix-core)
+
+## License
+
+MIT © Roland Bach Kiss
